@@ -15,20 +15,20 @@ THIS DOES __NOT__ convert your .sb3 or scratch files to a .html!! It only makes 
 
 
 TroubleShooting:
-###### The Packager doesn't detect my image file as valid.
+##### The Packager doesn't detect my image file as valid.
 This means that your image file is not a .png.
 
-###### The Packager doesn't detect my game file as valid.
+##### The Packager doesn't detect my game file as valid.
 This means that your image file is not a .html.
 
-###### I can't find the .snt anywhere?
+##### I can't find the .snt anywhere?
 Try to reload the folder. If it doesn't show, delete the existing folder with the game's files in it, in the 'Game Folders (Not Compressed Yet)' folder, and restart the packager and create your .snt again.
 
-###### I can't exit the Packager!
+##### I can't exit the Packager!
 Alt + F4 should work.
 
-###### The packager gives me a .zip instead of a .snt.
+##### The packager gives me a .zip instead of a .snt.
 This means 1 of 2 things. Your computer is slow and not replacing the .zip fast enough, just restart your computer, or it's that Kaylerr left the "IsUnityTest" bool on true, and that generates a .zip file. If it's constantly pushing .zips and not .snt files, raise an issue in the SNext Discord Server, or on this Github Repository.
 
-###### I have another issue!
+##### I have another issue!
 Submit a ticket on the SNext Discord Server, or on this Github Repository's Issues Tab.

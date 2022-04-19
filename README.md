@@ -13,6 +13,9 @@ THIS DOES __NOT__ convert your .sb3 or scratch files to a .html!! It only makes 
 2. Open this Unity Project in Unity **2020.1.14f1**. 
 3. Do whatever with it, just make sure you add a .txt that's readable and easily findable in your build of the packager, saying "Original Utility made by Kaylerr, originally for the SNext Project". Thanks!
 
+Notes for developers:
+Already installed libraries: TextMeshPro, SharpZipLib (0.86), StandaloneFileBrowser
+
 
 TroubleShooting:
 #### Q: The Packager doesn't detect my image file as valid.

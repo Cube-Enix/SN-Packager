@@ -11,6 +11,8 @@ public class FileInfoGetter : MonoBehaviour
     string HTMLPath, pngPath, mainPath, appName;
     public bool isUnityTest;
     public TMP_Text debugger;
+    public AudioSource sound;
+    public string[] blockList;
 
     public void Start()
     {
@@ -28,6 +30,13 @@ public class FileInfoGetter : MonoBehaviour
         }
     }
 
+
+
+    void PlayClick()
+    {
+        sound.Play();
+    }
+
     void AddToDebugger(string debugMessage, string messageType)
     {
         debugger.text = debugMessage;
@@ -35,6 +44,7 @@ public class FileInfoGetter : MonoBehaviour
         {
             debugger.color = Color.white;
         }
+
 
         if (messageType == "Warning")
         {
@@ -49,7 +59,16 @@ public class FileInfoGetter : MonoBehaviour
 
     public void GameName(TMP_InputField textField)
     {
+        PlayClick();
         appName = textField.text;
+        foreach (string blockedWord in blockList)
+        {
+            if(appName.Contains(blockedWord))
+            {
+                AddToDebugger("Woah! A word in this title is not allowed to be used. Use common sense to see what this word is, and try again!", "Error");
+                return;
+            }
+        }
         if(!Directory.Exists(mainPath + "/Game Folders (Not Compressed Yet)/" + appName))
         {
             Directory.CreateDirectory(mainPath + "/Game Folders (Not Compressed Yet)/" + appName);
@@ -63,16 +82,19 @@ public class FileInfoGetter : MonoBehaviour
 
     public void OpenHTMLFile()
     {
+        PlayClick();
         SaveResult(StandaloneFileBrowser.OpenFilePanel("Open File", "", "html", true), "HTML");
     }
 
     public void OpenImageFile()
     {
+        PlayClick();
         SaveResult(StandaloneFileBrowser.OpenFilePanel("Open File", "", "png", true), "PNG");
     }
 
     public void Compress()
     {
+        PlayClick();
         string GameDirectory = mainPath + "/Game Folders (Not Compressed Yet)/" + appName;
         string OutputDirectory = mainPath + "/SNTs (Compressed SNext Files)/" + appName + ".zip";
 

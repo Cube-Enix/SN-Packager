@@ -101,7 +101,7 @@ public class FileInfoGetter : MonoBehaviour
         AddToDebugger("Compressing into a .SNT!", "Log");
         SNTPackager.instance.compressDirectory(GameDirectory, OutputDirectory, 9);
         File.Move(OutputDirectory, mainPath + "/SNTs (Compressed SNext Files)/" + appName + ".snt");
-        AddToDebugger("Done!", "Warn");
+        AddToDebugger("Done compressing your file!", "Warn");
 
     }
 
